@@ -11,7 +11,8 @@ import SwiftUI
 struct MovieAppSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .preferredColorScheme(.dark)
         }
     }
 }

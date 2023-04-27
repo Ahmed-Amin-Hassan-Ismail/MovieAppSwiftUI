@@ -23,6 +23,6 @@ enum Poppins: String {
     
     
     var fontName: String {
-        return "Poppins-\(self.rawValue.capitalized)"
+        return "Poppins-\(self.rawValue.capitalizeFirstLetter)"
     }
 }
