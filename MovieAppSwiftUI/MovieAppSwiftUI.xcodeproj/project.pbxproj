@@ -39,6 +39,7 @@
 		AC0AF8F129FD83E70006350D /* ApiConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F029FD83E70006350D /* ApiConstructor.swift */; };
 		AC0AF8F329FD84640006350D /*  DefaultURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F229FD84640006350D /*  DefaultURLBuilder.swift */; };
 		AC0AF8F529FD86D20006350D /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F429FD86D20006350D /* MovieService.swift */; };
+		AC0AF8F729FD88D00006350D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F629FD88D00006350D /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		AC0AF8F029FD83E70006350D /* ApiConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstructor.swift; sourceTree = "<group>"; };
 		AC0AF8F229FD84640006350D /*  DefaultURLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DefaultURLBuilder.swift"; sourceTree = "<group>"; };
 		AC0AF8F429FD86D20006350D /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		AC0AF8F629FD88D00006350D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 		AC0AF8D729FA33D60006350D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AC0AF8F629FD88D00006350D /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				AC0AF8F129FD83E70006350D /* ApiConstructor.swift in Sources */,
 				AC0AF8F529FD86D20006350D /* MovieService.swift in Sources */,
 				AC0AF8A029FA2B090006350D /* MovieAppSwiftUIApp.swift in Sources */,
+				AC0AF8F729FD88D00006350D /* HomeViewModel.swift in Sources */,
 				AC0AF8DA29FA34930006350D /* SearchBar.swift in Sources */,
 				AC0AF8F329FD84640006350D /*  DefaultURLBuilder.swift in Sources */,
 				AC0AF8B229FA2D570006350D /* Color.swift in Sources */,

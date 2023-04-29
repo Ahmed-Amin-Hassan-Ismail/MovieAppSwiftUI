@@ -11,9 +11,9 @@ enum MovieServiceError: Error {
     case invalidResponse
 }
 
-struct MovieService {
+actor MovieService {
     
-    static func fetchData<T: Decodable>(api: ApiConstructor) async throws -> T {
+    func fetchData<T: Decodable>(api: ApiConstructor) async throws -> T {
         
         let url = try DefaultURLBuilder.build(api: api)
         let (data, response) = try await URLSession.shared.data(from: url)

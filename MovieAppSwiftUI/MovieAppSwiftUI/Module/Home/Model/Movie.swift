@@ -24,7 +24,7 @@ struct MovieResponse: Codable {
 
 // MARK: - Movie
 
-struct Movie: Codable {
+struct Movie: Codable, Identifiable {
     
     let posterPath: String
     let adult: Bool

@@ -12,6 +12,7 @@ struct HomeView: View {
     //MARK: - Properties
     
     @State private var searchText: String = ""
+    @StateObject private var homeViewModel = HomeViewModel()
     
     //MARK: - Body
     
@@ -25,20 +26,24 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
-                        ForEach(0..<5, id: \.self) { _ in
-                            MovieCard(movie: DeveloperPreview.instance.movie, cardType: .poster )
+                        ForEach(homeViewModel.trendingMovies) { movie in
+                            MovieCard(movie: movie, cardType: .poster )
                         }
                     }
                 }
                 
                 
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                    ForEach(0..<5, id: \.self) { _ in
-                        MovieCard(movie: DeveloperPreview.instance.movie, cardType: .grid)
+                    ForEach(homeViewModel.topRatedMovies) { movie in
+                        MovieCard(movie: movie, cardType: .grid)
                     }
                 }
             }
             
+        }
+        .task {
+            await homeViewModel.fetchTrendingMovies()
+            await homeViewModel.fetchTopRatedMovies()
         }
         .padding()
         .background(Color.AppBackgroundColor)
