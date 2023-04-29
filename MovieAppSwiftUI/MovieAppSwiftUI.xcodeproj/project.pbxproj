@@ -35,6 +35,10 @@
 		AC0AF8E829FD71CE0006350D /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8E729FD71CE0006350D /* PreviewProvider.swift */; };
 		AC0AF8EA29FD73DD0006350D /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8E929FD73DD0006350D /* CustomImageView.swift */; };
 		AC0AF8EC29FD757B0006350D /* MovieCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8EB29FD757B0006350D /* MovieCardType.swift */; };
+		AC0AF8EF29FD82CF0006350D /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8EE29FD82CF0006350D /* EndPoint.swift */; };
+		AC0AF8F129FD83E70006350D /* ApiConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F029FD83E70006350D /* ApiConstructor.swift */; };
+		AC0AF8F329FD84640006350D /*  DefaultURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F229FD84640006350D /*  DefaultURLBuilder.swift */; };
+		AC0AF8F529FD86D20006350D /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F429FD86D20006350D /* MovieService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		AC0AF8E729FD71CE0006350D /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		AC0AF8E929FD73DD0006350D /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		AC0AF8EB29FD757B0006350D /* MovieCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardType.swift; sourceTree = "<group>"; };
+		AC0AF8EE29FD82CF0006350D /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		AC0AF8F029FD83E70006350D /* ApiConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstructor.swift; sourceTree = "<group>"; };
+		AC0AF8F229FD84640006350D /*  DefaultURLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DefaultURLBuilder.swift"; sourceTree = "<group>"; };
+		AC0AF8F429FD86D20006350D /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,7 @@
 		AC0AF8AF29FA2D3B0006350D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AC0AF8ED29FD82C50006350D /* Network */,
 				AC0AF8B529FA2E5D0006350D /* Fonts */,
 				AC0AF8B029FA2D430006350D /* Extensions */,
 			);
@@ -221,6 +230,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AC0AF8ED29FD82C50006350D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AC0AF8EE29FD82CF0006350D /* EndPoint.swift */,
+				AC0AF8F029FD83E70006350D /* ApiConstructor.swift */,
+				AC0AF8F229FD84640006350D /*  DefaultURLBuilder.swift */,
+				AC0AF8F429FD86D20006350D /* MovieService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +326,7 @@
 				AC0AF8E429FD6FEC0006350D /* Movie.swift in Sources */,
 				AC0AF8B429FA2DC50006350D /* Image.swift in Sources */,
 				AC0AF8EA29FD73DD0006350D /* CustomImageView.swift in Sources */,
+				AC0AF8EF29FD82CF0006350D /* EndPoint.swift in Sources */,
 				AC0AF8D329FA32CE0006350D /* String.swift in Sources */,
 				AC0AF8E829FD71CE0006350D /* PreviewProvider.swift in Sources */,
 				AC0AF8E629FD71AD0006350D /* MovieCard.swift in Sources */,
@@ -313,8 +334,11 @@
 				AC0AF8DC29FA36170006350D /* HomeView.swift in Sources */,
 				AC0AF8EC29FD757B0006350D /* MovieCardType.swift in Sources */,
 				AC0AF8CB29FA30820006350D /* Poppins.swift in Sources */,
+				AC0AF8F129FD83E70006350D /* ApiConstructor.swift in Sources */,
+				AC0AF8F529FD86D20006350D /* MovieService.swift in Sources */,
 				AC0AF8A029FA2B090006350D /* MovieAppSwiftUIApp.swift in Sources */,
 				AC0AF8DA29FA34930006350D /* SearchBar.swift in Sources */,
+				AC0AF8F329FD84640006350D /*  DefaultURLBuilder.swift in Sources */,
 				AC0AF8B229FA2D570006350D /* Color.swift in Sources */,
 				AC0AF8D129FA326D0006350D /* Optional.swift in Sources */,
 			);
