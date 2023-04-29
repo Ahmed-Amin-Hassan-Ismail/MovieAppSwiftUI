@@ -13,6 +13,7 @@ struct HomeView: View {
     
     @State private var searchText: String = ""
     @StateObject private var homeViewModel = HomeViewModel()
+    @Namespace private var namespace
     
     //MARK: - Body
     
@@ -33,8 +34,24 @@ struct HomeView: View {
                 }
                 
                 
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(homeViewModel.genres) { genre in
+                            GenreSegmentView(genre: genre, nameSapce: namespace, selectedGenre: $homeViewModel.selectedGenre)
+                                .onTapGesture {
+                                    withAnimation(.easeInOut) {
+                                        homeViewModel.selectedGenre = genre
+                                        Task {
+                                            await homeViewModel.fetchMoviesForSelectedGenre()
+                                        }
+                                    }
+                                }
+                        }
+                    }
+                }
+                
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                    ForEach(homeViewModel.topRatedMovies) { movie in
+                    ForEach(homeViewModel.moviesForSelectedGenres) { movie in
                         MovieCard(movie: movie, cardType: .grid)
                     }
                 }
@@ -44,6 +61,8 @@ struct HomeView: View {
         .task {
             await homeViewModel.fetchTrendingMovies()
             await homeViewModel.fetchTopRatedMovies()
+            await homeViewModel.fetchGenre()
+            await homeViewModel.fetchMoviesForSelectedGenre()
         }
         .padding()
         .background(Color.AppBackgroundColor)

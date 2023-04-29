@@ -12,6 +12,7 @@ enum EndPoint {
     case trending
     case topRated
     case genre
+    case discoverMovies
     case movieReviews(_ movieId: Int)
     
     
@@ -23,6 +24,8 @@ enum EndPoint {
             return "/3/movie/top_rated"
         case .genre:
             return "/3/genre/movie/list"
+        case .discoverMovies:
+            return "3/discover/movie"
         case .movieReviews(let movieId):
             return "/3/movie/\(movieId)reviews"
         }

@@ -40,6 +40,8 @@
 		AC0AF8F329FD84640006350D /*  DefaultURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F229FD84640006350D /*  DefaultURLBuilder.swift */; };
 		AC0AF8F529FD86D20006350D /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F429FD86D20006350D /* MovieService.swift */; };
 		AC0AF8F729FD88D00006350D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F629FD88D00006350D /* HomeViewModel.swift */; };
+		AC0AF8F929FD94A00006350D /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8F829FD94A00006350D /* Genre.swift */; };
+		AC0AF8FB29FD97F50006350D /* GenreSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF8FA29FD97F50006350D /* GenreSegmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		AC0AF8F229FD84640006350D /*  DefaultURLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DefaultURLBuilder.swift"; sourceTree = "<group>"; };
 		AC0AF8F429FD86D20006350D /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		AC0AF8F629FD88D00006350D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AC0AF8F829FD94A00006350D /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		AC0AF8FA29FD97F50006350D /* GenreSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSegmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +225,7 @@
 				AC0AF8D929FA34930006350D /* SearchBar.swift */,
 				AC0AF8E529FD71AD0006350D /* MovieCard.swift */,
 				AC0AF8E929FD73DD0006350D /* CustomImageView.swift */,
+				AC0AF8FA29FD97F50006350D /* GenreSegmentView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0AF8E329FD6FEC0006350D /* Movie.swift */,
+				AC0AF8F829FD94A00006350D /* Genre.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +333,7 @@
 				AC0AF8CF29FA31BA0006350D /* UIApplication.swift in Sources */,
 				AC0AF8E129FD6C870006350D /* Constants.swift in Sources */,
 				AC0AF8E429FD6FEC0006350D /* Movie.swift in Sources */,
+				AC0AF8F929FD94A00006350D /* Genre.swift in Sources */,
 				AC0AF8B429FA2DC50006350D /* Image.swift in Sources */,
 				AC0AF8EA29FD73DD0006350D /* CustomImageView.swift in Sources */,
 				AC0AF8EF29FD82CF0006350D /* EndPoint.swift in Sources */,
@@ -335,6 +342,7 @@
 				AC0AF8E629FD71AD0006350D /* MovieCard.swift in Sources */,
 				AC0AF8CD29FA31120006350D /* View.swift in Sources */,
 				AC0AF8DC29FA36170006350D /* HomeView.swift in Sources */,
+				AC0AF8FB29FD97F50006350D /* GenreSegmentView.swift in Sources */,
 				AC0AF8EC29FD757B0006350D /* MovieCardType.swift in Sources */,
 				AC0AF8CB29FA30820006350D /* Poppins.swift in Sources */,
 				AC0AF8F129FD83E70006350D /* ApiConstructor.swift in Sources */,

@@ -28,12 +28,14 @@ struct Movie: Codable, Identifiable {
     
     let posterPath: String
     let adult: Bool
-    let overview, releaseDate: String
+    let overview: String
+    let releaseDate: String?
     let genreIDS: [Int]
     let id: Int
     let originalTitle: String
     let originalLanguage: String
-    let title, backdropPath: String
+    let title: String
+    let backdropPath: String?
     let popularity: Double
     let voteCount: Int
     let video: Bool
