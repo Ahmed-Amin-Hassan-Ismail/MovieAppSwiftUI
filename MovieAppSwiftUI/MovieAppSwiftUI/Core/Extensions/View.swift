@@ -14,4 +14,14 @@ extension View {
         
         self.font(.custom(font.fontName, size: size))
     }
+    
+    /// thses values is not accurate with landscape mode
+    
+    var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
+    var screenHeight: CGFloat {
+        return UIScreen.main.bounds.height
+    }
 }

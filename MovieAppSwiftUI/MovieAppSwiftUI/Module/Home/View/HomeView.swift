@@ -22,6 +22,21 @@ struct HomeView: View {
                 headerText
                 
                 SearchBar(searchText: $searchText)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(0..<5, id: \.self) { _ in
+                            MovieCard(movie: DeveloperPreview.instance.movie, cardType: .poster )
+                        }
+                    }
+                }
+                
+                
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                    ForEach(0..<5, id: \.self) { _ in
+                        MovieCard(movie: DeveloperPreview.instance.movie, cardType: .grid)
+                    }
+                }
             }
             
         }
