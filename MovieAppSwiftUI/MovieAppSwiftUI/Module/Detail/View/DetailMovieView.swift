@@ -35,8 +35,25 @@ struct DetailMovieView: View {
                     movieTimeDetails
                     
                     detailSection
+                    
+                    switch detailMovieViewModel.selectedSection {
+                    case .about:
+                        Text(detailMovieViewModel.movie.overview)
+                            .offset(y: 130)
+                            .padding()
+                    case .review:
+                        ForEach(detailMovieViewModel.reviews) { review in
+                            ReviewMovieCardView(review: review)
+                                .offset(y: 130)
+                                .padding()
+                        }
+                    }
+                        
                 }
             }
+        }
+        .task {
+           await detailMovieViewModel.fetchReview()
         }
         .background(Color.AppBackgroundColor)
     }

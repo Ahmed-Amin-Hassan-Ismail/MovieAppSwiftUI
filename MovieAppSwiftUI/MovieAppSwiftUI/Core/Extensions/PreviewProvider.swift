@@ -45,4 +45,14 @@ class DeveloperPreview {
         id: 28,
         name: "Action"
     )
+    
+    let review = Review(
+        author: "Test Author",
+        authorDetails: nil,
+        content: "Test content",
+        createdAt: "2023",
+        id: "Test",
+        updatedAt: "Test",
+        url: "Test"
+    )
 }
