@@ -17,7 +17,7 @@ struct MovieResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case page, results
         case totalResults = "total_results"
-        case totalPages = "total _pages"
+        case totalPages = "total_pages"
         
     }
 }
@@ -26,7 +26,7 @@ struct MovieResponse: Codable {
 
 struct Movie: Codable, Identifiable {
     
-    let posterPath: String
+    let posterPath: String?
     let adult: Bool
     let overview: String
     let releaseDate: String?
@@ -43,12 +43,12 @@ struct Movie: Codable, Identifiable {
     
     enum CodingKeys: String, CodingKey {
         
-        case posterPath = "poster _path"
+        case posterPath = "poster_path"
         case adult , overview
         case releaseDate = "release_date"
         case genreIDS = "genre_ids"
         case id
-        case originalTitle = "original _title"
+        case originalTitle = "original_title"
         case originalLanguage = "original_language"
         case title
         case backdropPath = "backdrop_path"
@@ -64,6 +64,6 @@ extension Movie {
     
     var imageUrl: URL? {
         
-        return URL(string: Constants.imageBaseUri + posterPath)
+        return URL(string: Constants.imageBaseUrl + (posterPath ?? ""))
     }
 }

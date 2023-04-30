@@ -17,7 +17,7 @@ struct GenreSegmentView: View {
     
     var body: some View {
         Text(genre.name)
-            .poppins(genre.id == selectedGenre.id ? .bold : .medium, 18.0)
+            .poppins(genre.id == selectedGenre.id ? .bold : .regular, 18.0)
             .background(
                 ZStack {
                     if genre.id == selectedGenre.id {

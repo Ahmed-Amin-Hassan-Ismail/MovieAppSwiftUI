@@ -10,7 +10,7 @@ import Foundation
 
 
 struct GenreResponse: Codable {
-    let genre: [Genre]
+    let genres: [Genre]
 }
 
 struct Genre: Codable, Identifiable {

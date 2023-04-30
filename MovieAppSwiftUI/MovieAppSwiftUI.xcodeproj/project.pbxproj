@@ -188,6 +188,7 @@
 		AC0AF8D429FA33C60006350D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				AC7285BB29FECDB100DF1160 /* Detail */,
 				AC0AF8D529FA33CD0006350D /* Home */,
 			);
 			path = Module;
@@ -248,6 +249,29 @@
 				AC0AF8F429FD86D20006350D /* MovieService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		AC7285BB29FECDB100DF1160 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AC7285BD29FECDC200DF1160 /* ViewModel */,
+				AC7285BC29FECDBF00DF1160 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		AC7285BC29FECDBF00DF1160 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC7285BD29FECDC200DF1160 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

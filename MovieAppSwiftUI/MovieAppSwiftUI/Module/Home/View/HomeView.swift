@@ -25,36 +25,12 @@ struct HomeView: View {
                 
                 SearchBar(searchText: $searchText)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack {
-                        ForEach(homeViewModel.trendingMovies) { movie in
-                            MovieCard(movie: movie, cardType: .poster )
-                        }
-                    }
-                }
+                trendingMoviesView
                 
+                moviesSections
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack {
-                        ForEach(homeViewModel.genres) { genre in
-                            GenreSegmentView(genre: genre, nameSapce: namespace, selectedGenre: $homeViewModel.selectedGenre)
-                                .onTapGesture {
-                                    withAnimation(.easeInOut) {
-                                        homeViewModel.selectedGenre = genre
-                                        Task {
-                                            await homeViewModel.fetchMoviesForSelectedGenre()
-                                        }
-                                    }
-                                }
-                        }
-                    }
-                }
+                moviesDiscovery
                 
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                    ForEach(homeViewModel.moviesForSelectedGenres) { movie in
-                        MovieCard(movie: movie, cardType: .grid)
-                    }
-                }
             }
             
         }
@@ -62,7 +38,6 @@ struct HomeView: View {
             await homeViewModel.fetchTrendingMovies()
             await homeViewModel.fetchTopRatedMovies()
             await homeViewModel.fetchGenre()
-            await homeViewModel.fetchMoviesForSelectedGenre()
         }
         .padding()
         .background(Color.AppBackgroundColor)
@@ -77,6 +52,42 @@ extension HomeView {
     private var headerText: some View {
         Text("What do you want to watch ?")
             .poppins(.bold, 20.0)
+    }
+    
+    private var trendingMoviesView: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack {
+                ForEach(homeViewModel.trendingMovies) { movie in
+                    MovieCard(movie: movie, cardType: .poster )
+                }
+            }
+        }
+    }
+    
+    private var moviesSections: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack {
+                ForEach(homeViewModel.genres) { genre in
+                    GenreSegmentView(genre: genre, nameSapce: namespace, selectedGenre: $homeViewModel.selectedGenre)
+                        .onTapGesture {
+                            withAnimation(.easeInOut) {
+                                homeViewModel.selectedGenre = genre
+                                Task {
+                                    await homeViewModel.fetchMoviesForSelectedGenre()
+                                }
+                            }
+                        }
+                }
+            }
+        }
+    }
+    
+    private var moviesDiscovery: some View {
+        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+            ForEach(homeViewModel.topRatedMovies) { movie in
+                MovieCard(movie: movie, cardType: .grid)
+            }
+        }
     }
 }
 

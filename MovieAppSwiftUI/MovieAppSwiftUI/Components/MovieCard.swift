@@ -24,6 +24,7 @@ struct MovieCard: View {
 //MARK: - Helper Methods
 
 extension MovieCard {
+    
     var itemWidth: CGFloat {
         return screenWidth * cardType.widthPercent
     }
@@ -35,6 +36,6 @@ extension MovieCard {
 
 struct MovieCard_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCard(movie: dev.movie, cardType: .poster )
+        MovieCard(movie: dev.movie, cardType: .poster)
     }
 }

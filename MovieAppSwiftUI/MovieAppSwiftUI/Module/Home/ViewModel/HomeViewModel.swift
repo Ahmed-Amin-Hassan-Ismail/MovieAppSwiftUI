@@ -51,7 +51,7 @@ class HomeViewModel: ObservableObject {
         do {
             let apiConstructor = ApiConstructor(endPoint: .genre)
             let genreApiResponse: GenreResponse = try await movieService.fetchData(api: apiConstructor)
-            genres = genreApiResponse.genre
+            genres = genreApiResponse.genres
             guard let firstGenre = genres.first else { return }
             selectedGenre = firstGenre
             
@@ -63,7 +63,7 @@ class HomeViewModel: ObservableObject {
     func fetchMoviesForSelectedGenre() async {
         do {
             let apiConstructor = ApiConstructor(endPoint: .discoverMovies,
-                                                params: ["with_genres": selectedGenre.id.description])
+                                                params: ["with_genres": "\(selectedGenre.id)"])
             let movieApiResponse: MovieResponse = try await movieService.fetchData(api: apiConstructor)
             moviesForSelectedGenres = movieApiResponse.results
             
