@@ -22,7 +22,7 @@ extension Image {
     }
     
     static var ClockIcon: Image {
-        Image("Clock[con")
+        Image("ClockIcon")
     }
     
     static var GenreIcon: Image {

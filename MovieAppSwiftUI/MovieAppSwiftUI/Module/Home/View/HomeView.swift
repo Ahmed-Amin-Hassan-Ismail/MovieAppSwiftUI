@@ -39,6 +39,9 @@ struct HomeView: View {
             await homeViewModel.fetchTopRatedMovies()
             await homeViewModel.fetchGenre()
         }
+        .fullScreenCover(item: $homeViewModel.movie, content: { movie in
+            DetailMovieView(movie: movie)
+        })
         .padding()
         .background(Color.AppBackgroundColor)
     }
@@ -58,7 +61,10 @@ extension HomeView {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
                 ForEach(homeViewModel.trendingMovies) { movie in
-                    MovieCard(movie: movie, cardType: .poster )
+                    MovieCard(movie: movie, imageType: .poster, cardType: .poster )
+                        .onTapGesture {
+                            homeViewModel.movie = movie
+                        }
                 }
             }
         }
@@ -85,7 +91,7 @@ extension HomeView {
     private var moviesDiscovery: some View {
         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
             ForEach(homeViewModel.topRatedMovies) { movie in
-                MovieCard(movie: movie, cardType: .grid)
+                MovieCard(movie: movie, imageType: .poster, cardType: .grid)
             }
         }
     }

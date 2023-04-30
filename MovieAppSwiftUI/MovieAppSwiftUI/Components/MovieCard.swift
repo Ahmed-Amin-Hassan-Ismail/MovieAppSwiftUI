@@ -12,12 +12,16 @@ struct MovieCard: View {
     //MARK: - Properties
     
     let movie: Movie
+    let imageType: MovieImageType
     let cardType: MovieCardType
     
     var body: some View {
-        CustomImageView(itemWidth: itemWidth,
-                        itemHeight: itemHeight,
-                        movie: movie)
+        CustomImageView(
+            itemWidth: itemWidth,
+            itemHeight: itemHeight,
+            movie: movie,
+            imageType: imageType
+        )
     }
 }
 
@@ -25,17 +29,19 @@ struct MovieCard: View {
 
 extension MovieCard {
     
-    var itemWidth: CGFloat {
+    private var itemWidth: CGFloat {
         return screenWidth * cardType.widthPercent
     }
     
-    var itemHeight: CGFloat {
+    private var itemHeight: CGFloat {
         return screenHeight * cardType.heightPercent
     }
 }
 
 struct MovieCard_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCard(movie: dev.movie, cardType: .poster)
+        MovieCard(movie: dev.movie,
+                  imageType: .poster,
+                  cardType: .poster)
     }
 }

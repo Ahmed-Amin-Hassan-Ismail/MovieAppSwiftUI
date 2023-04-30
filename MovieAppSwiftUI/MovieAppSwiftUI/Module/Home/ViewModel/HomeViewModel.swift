@@ -17,6 +17,7 @@ class HomeViewModel: ObservableObject {
     @Published private(set) var trendingMovies: [Movie] = []
     @Published private(set) var moviesForSelectedGenres: [Movie] = []
     @Published private(set) var genres: [Genre] = []
+    @Published var movie: Movie?
     @Published var selectedGenre: Genre = DeveloperPreview.instance.genre
     @Published private(set) var errorMessage: String = ""
     

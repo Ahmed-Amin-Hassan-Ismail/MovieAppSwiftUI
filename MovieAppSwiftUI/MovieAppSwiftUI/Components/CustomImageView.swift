@@ -14,12 +14,13 @@ struct CustomImageView: View {
     let itemWidth: CGFloat
     let itemHeight: CGFloat
     let movie: Movie
+    let imageType: MovieImageType
     
     //MARK: - Body
     
     var body: some View {
         
-        AsyncImage(url: movie.imageUrl) { image in
+        AsyncImage(url: movie.getImage(for: imageType)) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -41,6 +42,8 @@ struct CustomImageView_Previews: PreviewProvider {
     static var previews: some View {
         CustomImageView(itemWidth: 150,
                         itemHeight: 150,
-                        movie: dev.movie)
+                        movie: dev.movie,
+                        imageType: .poster
+        )
     }
 }
